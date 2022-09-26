@@ -12,21 +12,21 @@ CREATE TABLE inventory_by_category (
     PRIMARY KEY (category, product_id)
 ) WITH CLUSTERING ORDER BY (product_id ASC);
 ```
-- Enable CDC for inventory_by_category
+- Enable CDC for inventory_by_category **after** created Astra Streaming Tenant. 
 
 # Set up Astra Streaming 
 
 - Create Astra Streaming Tenant 
-- Create a topic called inventory under default namespace
-- Create a sink in default namespace with sink as AstraDB.  Select topic as inventory.  Select inventory_by_category table in Transactional DB. 
+- Create a topic called **inventory** under **default** namespace
+- Create a sink in **default** namespace with sink as **AstraDB**.  Select **topic** as **inventory**.  Select **inventory_by_category** table in Transactional DB. 
 - Make the mapping is as below.  Make sure category and product_id are mapped to key.* as shown below. 
 ```
-**category=key.category**, **product_id=key.product_id**, price=value.price, product_name=value.product_name, quantity=value.quantity
+category=key.category, product_id=key.product_id, price=value.price, product_name=value.product_name, quantity=value.quantity
 ```
-- Create another sink in astracdc namespace with sink as AstraDB. Select topic as data-*.inventory_by_category.  Set inventory_by_category table in Analytical DB. 
+- Create another sink in **astracdc** namespace with sink as **AstraDB**. Select **topic** as **data-*.inventory_by_category**.  Set **inventory_by_category** table in Analytical DB. 
 - Make the mapping is as below.  Make sure category and product_id are mapped to key.* as shown below. 
 ```
-**category=key.category**, **product_id=key.product_id**, price=value.price, product_name=value.product_name, quantity=value.quantity
+category=key.category, product_id=key.product_id, price=value.price, product_name=value.product_name, quantity=value.quantity
 ```
 
 # Configure the src/main/resources/application.yml
