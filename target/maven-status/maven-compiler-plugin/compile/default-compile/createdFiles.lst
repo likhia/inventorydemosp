@@ -1,0 +1,13 @@
+com/demo/inventorydemosp/model/ProductList.class
+com/demo/inventorydemosp/configuration/AstraDBConfiguration2.class
+com/demo/inventorydemosp/model/InventoryKey.class
+com/demo/inventorydemosp/controller/PulsarClientController.class
+com/demo/inventorydemosp/model/Product.class
+com/demo/inventorydemosp/configuration/AstraDBConfiguration.class
+com/demo/inventorydemosp/InventorydemospApplication.class
+com/demo/inventorydemosp/controller/ProductController.class
+com/demo/inventorydemosp/configuration/PulsarConfiguration.class
+com/demo/inventorydemosp/model/Inventory.class
+com/demo/inventorydemosp/service/ProductService.class
+com/demo/inventorydemosp/service/PulsarService.class
+com/demo/inventorydemosp/model/Data.class
