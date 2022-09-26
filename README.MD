@@ -61,3 +61,9 @@ db2:
 - Open Terminal.  Run mvn clean compile
 
 - Run mvn spring-boot:run
+
+# Check in source code
+
+- git add * -f  
+- git commit -m "updates"
+- git push -u origin main
