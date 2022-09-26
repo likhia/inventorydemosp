@@ -21,12 +21,12 @@ CREATE TABLE inventory_by_category (
 - Create a sink in default namespace with sink as AstraDB.  Select topic as inventory.  Select inventory_by_category table in Transactional DB. 
 - Make the mapping is as below.  Make sure category and product_id are mapped to key.* as shown below. 
 ```
-*category=key.category*, *product_id=key.product_id*, price=value.price, product_name=value.product_name, quantity=value.quantity
+**category=key.category**, **product_id=key.product_id**, price=value.price, product_name=value.product_name, quantity=value.quantity
 ```
 - Create another sink in astracdc namespace with sink as AstraDB. Select topic as data-*.inventory_by_category.  Set inventory_by_category table in Analytical DB. 
 - Make the mapping is as below.  Make sure category and product_id are mapped to key.* as shown below. 
 ```
-*category=key.category*, *product_id=key.product_id*, price=value.price, product_name=value.product_name, quantity=value.quantity
+**category=key.category**, **product_id=key.product_id**, price=value.price, product_name=value.product_name, quantity=value.quantity
 ```
 
 # Configure the src/main/resources/application.yml
