@@ -1,21 +1,21 @@
 pulsar: 
-  url: pulsar+ssl://pulsar-gcp-useast1.streaming.datastax.com:6651
-  token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTY5NDU1MjgsImlzcyI6ImRhdGFzdGF4Iiwic3ViIjoiY2xpZW50O2NlMzAxNWM5LTZjZTMtNGRhOS1iNTRhLTIxYzFkMDEwMjk4NTtjMmhwYm5semRISmxZVzA9OzgwOTQ4OGEwOGQiLCJ0b2tlbmlkIjoiODA5NDg4YTA4ZCJ9.eegRv2qr8lx5-4ShsHui0SJpuUZMzpBEd4uhISfklF-cloPsjfbTiZj7_5S9pWbVgqAdbLH8Z29B6KrE4M-33xerEVZajrQADRrh2DO1zHugKRyDrWRARlNDzI5UCNcMMfNRjHwg7qzZV_4p8X9sa7ekI_kHmFzyCEG73R0KR1mvuXia_Ju9LGkTTJW3Vxj33oYeGsSLp3JlxgdikItVK1DjOju5rcUepdavA0iKOPMh0cvglPC9dNjWqRzUZ6NNl9eKRFTXDP9WOo5bYcJfqZ6Fv8UhDK9f6NCphMusyEnzXfedBHeKtjALPjvc57GmlhRf1o0ycsyiHM5yqD03NA 
-  topic: persistent://shinystream/default/inventory2
+  url: pulsar+ssl://<astra streaming url>:6651
+  token: <astra stream token> 
+  topic: persistent://<astra streaming name>/default/inventory
 
 ---
 
 db: 
-  id: 080a0e1c-395c-460e-ae1d-096bb3dbd610
+  id: <transactional db id>
   region: us-east1
-  keyspace: shiny
-  token: AstraCS:qFezReaElBYICMFnaTDrUlwl:6ba3d22db2ae7746892412bc63a831650d3d2e973f2c5b478d900011432a665d
+  keyspace: <transactional db - keyspace>
+  token:  <transactional db - token>
 
 
 ---
 
 db2: 
-  id: 2a0003f3-a383-4908-ba28-50770b562c8f
+  id: <analytical db id>
   region: us-east1
-  keyspace: analytics
-  token: AstraCS:ZkCydgsThCgZtCdndfkXmwwH:7729f161fb68229584d8256f1484fc0c97e3bc3bcb0b5d54f227988f2b13feaa
+  keyspace: <analytical db - keyspace>
+  token: <analytical db - tokekn>
