@@ -1,21 +1,41 @@
 pulsar: 
+<<<<<<< HEAD
   url: pulsar+ssl://pulsar-gcp-useast1.streaming.datastax.com:6651
   token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjUzMzAyMzksImlzcyI6ImRhdGFzdGF4Iiwic3ViIjoiY2xpZW50OzUzZGI3NTdiLTRiZGItNDg5My1iZjcwLTY4ZDI1NzZhZDdhMzthVzUyWlc1MGIzSjVjM1J5WldGdDs2ZWIyODE3ZGY2IiwidG9rZW5pZCI6IjZlYjI4MTdkZjYifQ.dDdqNPd_gQHxSqcdhtYwtxWE3WLJDnYWpcLaYBjCqUE4aZkdEaj4ZaSr7vfOFxN1bmuC9IHHeR3Nw0gF5GaPSjbGXdMxIXj4TKNQH_l1jbggOABRwyFyKDm8Ad2_CpahZPNu-nHbzeuOjgsGu2lw9tq8ff14yOnEQMhe9cJd5OH182R-EYpbcsrE8quSBpQfj4vEQB9pEISCN6V4Of108KZRCJ4yxnmDM725eo9LLGPmTLBFC-V7nD4OnbmgjmAW07ZmTu992f1rcR2wWivz-lpVjLWGA5ifQmQkStKdiLyhLOaB4o2_wuUvdsuBDQ-0TjgCjbblXI4vHCy53LERuA
   topic: persistent://inventorystream/default/inventory
+=======
+  url: pulsar+ssl://<astra streaming url>:6651
+  token: <astra stream token> 
+  topic: persistent://<astra streaming name>/default/inventory
+>>>>>>> 14301691075be4ec8bbe15901e7b95fc0b0d9685
 
 ---
 
 db: 
+<<<<<<< HEAD
   id: 758806b0-34e2-46f9-a7fd-7324ddabb708
   region: us-east1
   keyspace: transactionaldb
   token: AstraCS:ZaDoZqHckFdnvspkrjECRTMQ:efe2684eaf31c60722a3b33c2a4e36fa8b2d9eeac30720e94199af7af2a0ad5f
+=======
+  id: <transactional db id>
+  region: us-east1
+  keyspace: <transactional db - keyspace>
+  token:  <transactional db - token>
+>>>>>>> 14301691075be4ec8bbe15901e7b95fc0b0d9685
 
 
 ---
 
 db2: 
+<<<<<<< HEAD
   id: 4910d8a1-aca3-4c47-b2f8-7ef98db9f08d
   region: us-east1
   keyspace: analyticdb
   token: AstraCS:YNaBspFWdWByHllxDvlveAPt:01e239ef94ce4d258b923404e8f7bce6da3f8eb7554004fba36aa7f3facf2428  
+=======
+  id: <analytical db id>
+  region: us-east1
+  keyspace: <analytical db - keyspace>
+  token: <analytical db - tokekn>
+>>>>>>> 14301691075be4ec8bbe15901e7b95fc0b0d9685
