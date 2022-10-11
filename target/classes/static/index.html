@@ -87,22 +87,24 @@
     }
     
     header h1{
-        font-size: 36px; 
+        font-size: 32px; 
         color: #5d5959;
         display: inline-block;
-        padding: 20px 20px 0 0;
+        padding: 10px 10px 0 0;
     }
 
     h1 span {
-        font-size: 36px; 
+        font-size: 32px; 
+        font-family: "Arial", Helvetica, sans-serif;
         color: #5d5959;
-        padding: 20px 20px 10px 10px;
+        padding: 5px 5px 5px 5px;
     }
 
     h3 span {
-        font-size: 24px; 
+        font-size: 28px; 
+        font-family: "Arial", Helvetica, sans-serif;
         color: #5d5959;
-        padding: 20px 20px 10px 10px;
+        padding: 5px 5px 5px 5px;
     }
 
     h1 .mid{
@@ -124,74 +126,137 @@
             vertical-align:middle;
     }
 
+    #products_tab tr:nth-child(odd) {
+       background-color: #D6EEEE;
+    }
+
+    #products_tab {
+        border-collapse: collapse;
+    }
+
+    #products_tab th {
+        font-family: "Arial", Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        background-color: #5a5a50;
+    }
+
+    #products_tab2 th {
+        font-family: "Arial", Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        background-color: #5a5a50;
+    }
+
+    #products_tab2 tr:nth-child(odd) {
+       background-color: #D6EEEE;
+    }
+
+    #products_tab2 {
+        border-collapse: collapse;
+    }
+
+    #mainTable {
+        border: 0px;
+        border-collapse: collapse;
+    }
+
+    #inventory td {
+        padding-bottom: 10px;
+    }
+
+    label {
+        font-family: "Arial", Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+    }
+
 </style>
 <body>
-    <table width="100%">
-        <tr>
-            <td width="40%">
-                <div id="warehouse">
-                    <h1>
-                        <span>
-                            <img class="mid" src="/img/inventory.png" width="40%" height="40%" style="display: inline;" />
-                            From Inventory Store
-                        </span>
-                    </h1>
-                    <p />
-                    <form action="/pulsar/publish" method="post" >
-                        <table>
-                            <tr>
-                                <td>Category : </td>
-                                <td>
-                                    <select id = "category" name = "category" onchange="listProducts()" >  
-                                        <option value=""> ---Choose Category --- </option>  
-                                        <option value="furniture">Furniture</option>  
-                                        <option value="applicance">Applicance</option>  
-                                        <option value="skin">Skin Care</option>  
-                                        <option value="body">Body Care</option>  
-                                    </select>  
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Product: </td>
-                                <td>
-                                    <select id = "product" name = "product" onchange="displaydetails()" >  
-                                    </select> 
-                                    <input type="hidden" name="productname" id="productname" />
-                                    <input type="hidden" name="productid" id="productid" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Price:</td>
-                                <td>
-                                    <input type="number" id="price" name="price" min="0.00" max="10000.00" step="0.10" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Available Stock:</td>
-                                <td>
-                                    <input type="number" id="quantity" name="quantity"/>
-                                </td>
-                            </tr>
-                        </table>
-                        <p />
-                        <input type="submit" />
-                    </form>
-                </div>
+    <table width="100%" border="0px" id="mainTable" height="100%">
+        <tr height="10%">
+            <td width="45%" bgcolor= "#F2F3F4">
+                <h1>
+                    <span>
+                        <img class="mid" src="/img/inventory.png" width="40%" height="40%" style="display: inline;" />
+                        Inventory Store
+                    </span>
+                </h1>
             </td>
-            <td width="10%">
+            <td width="5%"></td> 
+            <td width="50%">
+                <h1>
+                    <span>
+                        <img class="mid" src="/img/ecommerce.png" width="40%" height="40%" style="display: inline;" />
+                        Ecommerce Online 
+                    </span>
+                </h1>
+            </td>
+        </tr>
+        <tr height="40%">
+            <td width="45%" bgcolor= "#F2F3F4" valign="top" >
+                
+                <form action="/pulsar/publish" method="post" >
+                    <table id="inventory">
+                        <tr>
+                            <td><label>Category </label>: </td>
+                            <td>
+                                <select id = "category" name = "category" onchange="listProducts()" >  
+                                    <option value=""> ---Choose Category --- </option>  
+                                    <option value="furniture">Furniture</option>  
+                                    <option value="applicance">Applicance</option>  
+                                    <option value="skin">Skin Care</option>  
+                                    <option value="body">Body Care</option>  
+                                </select>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Product</label>: </td>
+                            <td>
+                                <select id = "product" name = "product" onchange="displaydetails()" >  
+                                </select> 
+                                <input type="hidden" name="productname" id="productname" />
+                                <input type="hidden" name="productid" id="productid" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Price</label>:</td>
+                            <td>
+                                <input type="number" id="price" name="price" min="0.00" max="10000.00" step="0.10" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Available Stock</label>:</td>
+                            <td>
+                                <input type="number" id="quantity" name="quantity"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <p />
+                    <input type="submit" />
+                </form>
+            </td>
+            
+            <td width="5%">
+                <!---
                 <image src="/img/astra_streaming.png" style="display: inline;" width="80px" height="50px" />
                 <br>
                 <image src="/img/orange_right.png" style="display: inline;" width="50px" height="50px"/>
+                -->
             </td>
+        
             <td width="50%" valign="top" >
                 <div id="astradb" >
-                    <h1>
+                    <h3>
                         <span>
-                            <image class="bottom" src="/img/datastax_astra.png" style="display: inline;"/>Transactional Database
+                            <!--image class="bottom" src="/img/datastax_astra.png" style="display: inline;"/-->Transactional Database
                         </span>
-                    </h1>
+                    </h3>
                     <p />
-                    <table class="table table-hover" id="products_tab" border="1" width="100%">
+                    <table class="table table-hover" id="products_tab" border="1" width="100%" >
                         <tr>
                             <th>Category</th>
                             <th>Product ID</th>
@@ -206,10 +271,12 @@
                 </div>
             </td>
         </tr>
+        <!--
         <tr>
-            <td width="40%"></td>
-            <td width="10%"></td>
+            <td width="45%" bgcolor= "#F2F3F4"></td>
+            <td width="5%"></td> 
             <td width="50%">
+                
                 <h3 align="center">
                     <span>
                         <image src="/img/orange_right.png" style="display: inline;" width="50px" height="50px" class="rotate_image"/> CDC
@@ -218,16 +285,18 @@
                 
             </td>
         </tr>
+    -->
         <tr>
-            <td width="40%"></td>
-            <td width="10%"></td>
-            <td width="50%">
-                <div id="astradb2" >
-                    <h1>
+            <td width="45%" bgcolor= "#F2F3F4">
+            </td>
+            <td width="5%"></td> 
+            <td width="50%" valign="top">
+                <div id="astradb2">
+                    <h3>
                         <span>
-                            <image class="bottom" src="/img/datastax_astra.png" style="display: inline;"/>Analytical Database
+                            <!--image class="bottom" src="/img/datastax_astra.png" style="display: inline;"/-->Analytical Database
                         </span>
-                    </h1>
+                    </h3>
                     <p />
                     <table class="table table-hover" id="products_tab2" border="1" width="100%">
                         <tr>
